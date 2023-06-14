@@ -1,0 +1,16 @@
+/* select, */
+input {
+    border: none;
+    width: 100%;
+    border-radius: 0;
+}
+input:focus-visible {
+    outline: none;
+}
+select {
+    border: 1px solid rgba(222,226,230,1);
+    border-radius: 6px;
+    height: 34px;
+    padding: 0 5px;
+    margin-left: 5px;
+}
