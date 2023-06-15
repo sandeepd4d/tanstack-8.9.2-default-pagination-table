@@ -14,8 +14,8 @@ import {createColumnHelper, flexRender, getCoreRowModel, useReactTable, getPagin
     setValue(initialValue);
   }, [initialValue]);
 
- const onBlur = () => {
-    tableMeta?.updateData(row.index, column.id, !isNaN?Number(value):value);
+ const onBlur = (e) => {
+    tableMeta?.updateData(row.index, column.id, !isNaN?Number(e.target.value):e.target.value);
   };
   const onSelectChange = () => {
     const age = row.original.age;
@@ -34,8 +34,8 @@ import {createColumnHelper, flexRender, getCoreRowModel, useReactTable, getPagin
   ) : (
     <input
       value={value}
-      onChange={(e) => setValue(e.target.value)}
-      onBlur={onBlur}
+      // onChange={(e) => setValue(e.target.value)}
+      onChange={(e)=>onBlur(e)}
       type={columnMeta?.type || "text"}
     />
   );
